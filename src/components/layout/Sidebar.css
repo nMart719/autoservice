@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+aside{
+    width:350px;
+    background-color: var(--secondary);
+}
+aside ul{
+    @apply flex flex-col;
+}

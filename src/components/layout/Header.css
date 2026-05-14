@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+header{
+    background-color: var(--tertiary);
+    @apply flex justify-end space-x-2 p-2;
+}
