@@ -1,14 +1,30 @@
-import cars from "../../data/cars.js";
-function CarList(){
+export function CarList({cars}){
+    console.log(cars);
 return(
     <div>
-        {cars.map(car=>{
-            <div key={car.id}>
-                {car.Model} {car.vin} {car.plateNumber}
-            </div>
-        })}
+        {cars.map((car) => {
+        return (
+          <div key={car.id}>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Model:</td>
+                  <td>{car.model}</td>
+                </tr>
+                <tr>
+                  <td>VIN:</td>
+                  <td>{car.vin}</td>
+                </tr>
+                <tr>
+                  <td>Plate number:</td>
+                  <td>{car.plateNumber}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      })}
     </div>
 );
 }
 
-export default CarList;
