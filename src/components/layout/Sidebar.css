@@ -3,7 +3,17 @@
 aside{
     width:350px;
     background-color: var(--secondary);
+   
+    transform: translateX(-100%);
+    transition: transform 0.7s ease-in-out;
 }
 aside ul{
     @apply flex flex-col;
+}
+aside li{
+    @apply p-3 text-left hover:bg-(--tertiary);
+}
+
+aside.showSidebar{
+   transform: translateX(0);
 }

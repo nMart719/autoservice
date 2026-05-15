@@ -2,5 +2,8 @@
 
 header{
     background-color: var(--tertiary);
-    @apply flex justify-end space-x-2 p-2;
+    @apply flex justify-between space-x-2 p-2;
+}
+header .personal{
+    @apply flex space-x-2;
 }

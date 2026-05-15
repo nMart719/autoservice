@@ -1,7 +1,7 @@
 import "./Sidebar.css"
-export function Sidebar() {
+export function Sidebar({isShow}) {
   return (
-    <aside>
+    <aside className={isShow ? "showSidebar" : ''}>
       <nav>
         <ul>
           <li className="sidebar_menu_item">Dashboard</li>

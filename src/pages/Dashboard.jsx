@@ -7,12 +7,13 @@ import { Header } from "../components/layout/Header";
 import { useState } from "react";
 export default function Dashboard() {
   const [selectedClientId, setSelectedClientId] = useState(null);
-  console.log(selectedClientId, typeof selectedClientId);
+  const [sidebarShow, setSidebarShow] = useState(false);
+  console.log(sidebarShow);
   return (
     <>
-      <Header />
+      <Header isSidebarShow={sidebarShow} onToggle={setSidebarShow}/>
       <main>
-        <Sidebar></Sidebar>
+        <Sidebar isShow={sidebarShow}></Sidebar>
         <section>
           <ClientList
             clients={clients}
