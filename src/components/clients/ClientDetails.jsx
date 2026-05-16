@@ -9,7 +9,7 @@ export function ClientDetails({ clientId }) {
   return (
     <div>
       <h2>
-        {client.name} {client.surname}
+        {client.name} {client.surname} {client.phone} {client.email} Cars:{cars.length}
       </h2>
       {cars.map((car) => {
         return (

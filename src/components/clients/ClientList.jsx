@@ -1,18 +1,33 @@
 export function ClientList({ clients, onSelect }) {
   return (
-    <div>
+    <table>
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Phone</td>
+          <td>Email</td>
+          <td>Cars count</td>
+        </tr>
+      </thead>
+      <tbody>
       {clients.map((client) => {
         return (
-          <div
+          <tr
             key={client.id}
             onClick={() => {
               onSelect(client.id);
             }}
           >
-            {client.name} {client.surname}
-          </div>
+            <td>
+            {`${client.name} ${client.surname}`}
+            </td>
+            <td>{client.phone}</td>
+            <td>{client.email}</td>
+            <td>{client.carsCount}</td>
+          </tr>
         );
       })}
-    </div>
+      </tbody>
+    </table>
   );
 }

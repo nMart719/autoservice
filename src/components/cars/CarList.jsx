@@ -8,6 +8,10 @@ return(
             <table>
               <tbody>
                 <tr>
+                  <td>Make:</td>
+                  <td>{car.make}</td>
+                </tr>
+                <tr>
                   <td>Model:</td>
                   <td>{car.model}</td>
                 </tr>
