@@ -1,3 +1,4 @@
+import "./styles/variables.css"
 import "./styles/style.css";
 import { Layout } from "./components/layout/Layout";
 import { Clients } from "./pages/Clients";

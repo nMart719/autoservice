@@ -1,0 +1,37 @@
+:root {
+  /* Colors */
+  --primary: #793535;
+  --secondary: #777D9B;
+  --background: #eeeeee;
+  --surface: #d9d9d9;
+  --text: #02152A;
+  --text-secondary: #eeeeee;
+  --border: #e5e7eb;
+  --green: #B2C3B1;
+  --success: #DBE6AC;
+  --warning: #EBF1D1;
+  --danger: #793535;
+
+  /* Typography */
+  --font-family: "Inter", sans-serif;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
