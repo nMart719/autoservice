@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
-header{
-    background-color: var(--tertiary);
+header {
+    background-color: var(--secondary);
+    color: var(--text);
     @apply flex justify-between space-x-2 p-2;
 }
-header .personal{
+
+header .personal {
     @apply flex space-x-2;
+}
+
+div.menu {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: var(--text-xl);
 }

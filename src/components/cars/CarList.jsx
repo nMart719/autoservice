@@ -3,8 +3,8 @@ export function CarList({ cars }) {
   return (
     <div>
       <div>
-        <input type="search">Search</input>
-        <input type="button">Filter</input>
+        {/* <input type="search">Search</input> */}
+        {/* <input type="button">Filter</input> */}
       </div>
       <table id="table_car_list">
         <thead>

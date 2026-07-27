@@ -1,10 +1,5 @@
 @import "tailwindcss";
-:root {
-  --primary: #eeeeee;
-  --secondary:#9B4444;
-  --tertiary: #C68484; 
-  --text_primary: #111111;
-}
+
 html,body, #root{
     @apply h-full w-full;
 }

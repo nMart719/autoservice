@@ -27,3 +27,6 @@ div:has(#table_car_list){
 #table_car_list td, th{
     padding: 10px;
 }
+table#table_car_list, th, td {
+    border: 1px solid var(--secondary);
+}

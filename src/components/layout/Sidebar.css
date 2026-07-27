@@ -2,8 +2,8 @@
 
 aside{
     width:350px;
-    background-color: var(--secondary);
-   
+    background-color: var(--primary);
+   color: var(--text-secondary);
     transform: translateX(-100%);
     transition: transform 0.7s ease-in-out;
 }
