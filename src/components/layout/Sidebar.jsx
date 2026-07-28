@@ -6,8 +6,11 @@ export function Sidebar({isShow}) {
       <nav>
         <ul>
           <li className="sidebar_menu_item"><Link to="/">Dashboard</Link></li>
+          <hr></hr>
           <li className="sidebar_menu_item"><Link to="/cars">Cars</Link></li>
+          <hr></hr>
           <li className="sidebar_menu_item"><Link to="/clients">Clients</Link></li>
+          <hr></hr>
         </ul>
       </nav>
     </aside>
