@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-
+/* 
 main{
     @apply flex h-full w-full;
 }
@@ -14,12 +14,10 @@ div:has(#table_car_list){
 }
 #table_car_list{
     width: 100%;
-    /* display: block; */
 }
 #table_car_list thead, tbody{
     background-color: var(--surface);
     width: 100%;
-    /* display: block; */
 }
 #table_car_list thead{
     margin-bottom: 10px;
@@ -29,4 +27,4 @@ div:has(#table_car_list){
 }
 table#table_car_list, th, td {
     border: 1px solid var(--secondary);
-}
+} */

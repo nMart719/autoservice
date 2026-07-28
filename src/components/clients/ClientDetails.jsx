@@ -1,5 +1,6 @@
 import { getCarsByClient } from "../../utils/cars.js";
 import { clients } from "../../data/clients.js";
+import {CarList} from "../../components/cars/CarList";
 export function ClientDetails({ clientId }) {
   console.log(clientId, typeof clientId);
   if (clientId == null) return <></>;
@@ -7,11 +8,12 @@ export function ClientDetails({ clientId }) {
 
   const cars = getCarsByClient(client.id);
   return (
-    <div>
+    <div className="mt-4!">
       <h2>
         {client.name} {client.surname} {client.phone} {client.email} Cars:{cars.length}
       </h2>
-      {cars.map((car) => {
+        <CarList cars={cars}></CarList>
+      {/* {cars.map((car) => {
         return (
           <div key={car.id}>
             <table>
@@ -32,7 +34,7 @@ export function ClientDetails({ clientId }) {
             </table>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

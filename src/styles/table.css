@@ -1,4 +1,4 @@
-@import "tailwindcss";
+
 div:has(table){
     width: 100%;
 }
