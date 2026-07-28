@@ -1,5 +1,9 @@
 import "./styles/variables.css"
+import "./styles/reset.css";
 import "./styles/style.css";
+import "./styles/typography.css";
+import "./styles/table.css";
+import "./styles/page.css";
 import { Layout } from "./components/layout/Layout";
 import { Clients } from "./pages/Clients";
 import { Cars } from "./pages/Cars";

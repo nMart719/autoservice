@@ -9,20 +9,20 @@ export function CarList({ cars }) {
       <table id="table_car_list">
         <thead>
           <tr>
-            <th>Make:</th>
-            <th>Model:</th>
-            <th>VIN:</th>
-            <th>Plate number:</th>
+            <th className="text-left">Make:</th>
+            <th className="text-left">Model:</th>
+            <th className="text-left">VIN:</th>
+            <th className="text-left">Plate number:</th>
           </tr>
         </thead>
         <tbody>
           {cars.map((car) => {
             return (
               <tr key={car.id}>
-                <td>{car.make}</td>
-                <td>{car.model}</td>
-                <td>{car.vin}</td>
-                <td>{car.plateNumber}</td>
+                <td className="text-left">{car.make}</td>
+                <td className="text-left">{car.model}</td>
+                <td className="text-left">{car.vin}</td>
+                <td className="text-left">{car.plateNumber}</td>
               </tr>
             );
           })}

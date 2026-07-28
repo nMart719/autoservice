@@ -1,0 +1,13 @@
+body{    
+  font-family: var(--font-family);
+  color: var(--text);
+  font-size: var(--text-base);
+}
+th{
+  font-weight: 400;
+}
+
+h2{
+  font-weight: 700;
+  font-size: var(--text-lg);
+}

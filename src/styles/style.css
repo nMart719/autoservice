@@ -1,28 +1,13 @@
 @import "tailwindcss";
 
 html,body, #root{
-    /* @apply h-full w-full; */
+    @apply w-full;
 }
 body{    
-  font-family: var(--font-family);
-  color: var(--text);
   background-color: var(--background);
-  font-size: var(--text-base);
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-th{
-  font-weight: 400;
 }
 
 h2{
-  font-weight: 700;
-  font-size: var(--text-lg);
   display: inline-block;
   margin-bottom: 20px;
 }

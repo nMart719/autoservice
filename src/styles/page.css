@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+
+main{
+    @apply flex h-full w-full;
+}
+
+section{
+    @apply flex flex-col items-center w-full h-full;
+    padding: 50px;
+}

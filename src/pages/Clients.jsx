@@ -14,6 +14,7 @@ const clientsWithCounts = useMemo(() => {
   const [selectedClientId, setSelectedClientId] = useState(null);
   return (
     <>
+    <h2>Clients</h2>
       <ClientList clients={clientsWithCounts} onSelect={setSelectedClientId}></ClientList>
       <ClientDetails clientId={selectedClientId}></ClientDetails>
     </>

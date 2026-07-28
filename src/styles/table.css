@@ -1,0 +1,22 @@
+@import "tailwindcss";
+div:has(table){
+    width: 100%;
+}
+table{
+    width: 100%;
+    /* display: block; */
+}
+table thead, tbody{
+    background-color: var(--surface);
+    width: 100%;
+    /* display: block; */
+}
+table thead{
+    margin-bottom: 10px;
+}
+table td, th{
+    padding: 5px;
+}
+table, th, td {
+    border: 1px solid var(--secondary);
+}

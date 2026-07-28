@@ -25,7 +25,7 @@ div:has(#table_car_list){
     margin-bottom: 10px;
 }
 #table_car_list td, th{
-    padding: 10px;
+    padding: 5px;
 }
 table#table_car_list, th, td {
     border: 1px solid var(--secondary);
