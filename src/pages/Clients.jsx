@@ -10,7 +10,7 @@ const clientsWithCounts = useMemo(() => {
       ...client,
       carsCount: cars.filter(c => c.clientId === client.id).length
     }))
-  }, []);
+  }, [clients, cars]);
   const [selectedClientId, setSelectedClientId] = useState(null);
   return (
     <>
