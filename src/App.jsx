@@ -8,6 +8,7 @@ import { Layout } from "./components/layout/Layout";
 import { Clients } from "./pages/Clients";
 import { Cars } from "./pages/Cars";
 import { Dashboard } from "./pages/Dashboard";
+import { Orders } from "./pages/Orders";
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="clients" element={<Clients />} />
           <Route path="cars" element={<Cars />} />
+          <Route path="orders" element={<Orders />} />
         </Route>
       </Routes>
     </>

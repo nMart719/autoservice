@@ -11,6 +11,8 @@ export function Sidebar({isShow}) {
           <hr></hr>
           <li className="sidebar_menu_item"><Link to="/clients">Clients</Link></li>
           <hr></hr>
+          <li className="sidebar_menu_item"><Link to="/orders">Orders</Link></li>
+          <hr></hr>
         </ul>
       </nav>
     </aside>
