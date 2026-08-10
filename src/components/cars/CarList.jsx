@@ -1,5 +1,4 @@
 export function CarList({ cars }) {
-  console.log(cars);
   return (
     <div>
       <div>
@@ -9,10 +8,10 @@ export function CarList({ cars }) {
       <table id="table_car_list">
         <thead>
           <tr>
-            <th className="text-left">Make:</th>
-            <th className="text-left">Model:</th>
-            <th className="text-left">VIN:</th>
-            <th className="text-left">Plate number:</th>
+            <th className="text-left">Make</th>
+            <th className="text-left">Model</th>
+            <th className="text-left">VIN</th>
+            <th className="text-left">Plate number</th>
           </tr>
         </thead>
         <tbody>
