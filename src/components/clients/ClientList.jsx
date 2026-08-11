@@ -1,3 +1,4 @@
+import { getFullName } from "../../utils/clients";
 export function ClientList({ clients, onSelect }) {
   return (
     <table>
@@ -19,7 +20,7 @@ export function ClientList({ clients, onSelect }) {
             }}
           >
             <td>
-            {`${client.name} ${client.surname}`}
+            ${getFullName(client)}
             </td>
             <td>{client.phone}</td>
             <td>{client.email}</td>

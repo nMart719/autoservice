@@ -1,5 +1,5 @@
 import { getFullName } from "../../utils/clients";
-import { getCar } from "../../utils/cars";
+import { getCarMakeModel } from "../../utils/cars";
 export function OrderList({ orders, onSelect }) {
     
   return (
@@ -24,7 +24,7 @@ export function OrderList({ orders, onSelect }) {
               <tr key={order.id} onClick={() => {
               onSelect(order.id);
             }}>
-                <td className="text-left">{getCar(order.car)}</td>
+                <td className="text-left">{getCarMakeModel(order.car)}</td>
                 <td className="text-left">{getFullName(order.client)}</td>
                 <td className="text-left">{order.description}</td>
                 <td className="text-left">{order.date}</td>

@@ -4,6 +4,10 @@ export function getCarsByClient(clientId) {
   return cars.filter(car => car.clientId === clientId)
 }
 
-export function getCar(car) {
+export function getCarMakeModel(car) {
   return `${car.make} ${car.model} `
+}
+
+export function getCarById(carId) {
+  return cars.find(car => car.id === carId)
 }
