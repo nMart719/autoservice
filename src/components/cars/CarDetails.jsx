@@ -1,18 +1,20 @@
-import { getCarsByClient } from "../../utils/cars.js";
-import { clients } from "../../data/clients.js";
+import { getCarMakeModel } from "../../utils/cars.js";
+import { cars} from "../../data/cars.js";
 import {CarList} from "../../components/cars/CarList";
 import { useParams } from "react-router-dom";
-export function ClientDetails() {
+export function CarDetails() {
+  
   const { id } = useParams()
-  if (id == null) return <></>;
-  const client = clients.find((c) => c.id === Number(id));
-  const cars = getCarsByClient(client.id);
+  const car = cars.find(c => c.id === parseInt(id))
+
+  if (!car) return <div>Car is not found</div>
+
   return (
     <div className="mt-4!">
       <h2>
-        {client.name} {client.surname} {client.phone} {client.email} Cars:{cars.length}
+        {getCarMakeModel(car)}
       </h2>
-        <CarList cars={cars}></CarList>
+        <div>Car details</div>
       {/* {cars.map((car) => {
         return (
           <div key={car.id}>

@@ -1,5 +1,7 @@
 import { getFullName } from "../../utils/clients";
-export function ClientList({ clients, onSelect }) {
+import { useNavigate } from "react-router-dom";
+export function ClientList({ clients }) {
+  const navigate = useNavigate();
   return (
     <table>
       <thead>
@@ -11,23 +13,16 @@ export function ClientList({ clients, onSelect }) {
         </tr>
       </thead>
       <tbody>
-      {clients.map((client) => {
-        return (
-          <tr
-            key={client.id}
-            onClick={() => {
-              onSelect(client.id);
-            }}
-          >
-            <td>
-            ${getFullName(client)}
-            </td>
-            <td>{client.phone}</td>
-            <td>{client.email}</td>
-            <td>{client.carsCount}</td>
-          </tr>
-        );
-      })}
+        {clients.map((client) => {
+          return (
+            <tr key={client.id}  onClick={() => navigate(`/clients/${client.id}`)}>
+                <td>{getFullName(client)}</td>
+                <td>{client.phone}</td>
+                <td>{client.email}</td>
+                <td>{client.carsCount}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

@@ -4,12 +4,15 @@ import "./styles/style.css";
 import "./styles/typography.css";
 import "./styles/table.css";
 import "./styles/page.css";
+import { NotFound } from "./pages/NotFound";
 import { Layout } from "./components/layout/Layout";
 import { Clients } from "./pages/Clients";
 import { Cars } from "./pages/Cars";
 import { Dashboard } from "./pages/Dashboard";
 import { Orders } from "./pages/Orders";
 import { Routes, Route } from "react-router-dom";
+import { ClientDetails } from "./components/clients/ClientDetails";
+import { CarDetails } from "./components/cars/CarDetails";
 function App() {
   return (
     <>
@@ -19,7 +22,10 @@ function App() {
           <Route path="clients" element={<Clients />} />
           <Route path="cars" element={<Cars />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="clients/:id" element={<ClientDetails/>} />
+          <Route path="cars/:id" element={<CarDetails />} />
         </Route>
+         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

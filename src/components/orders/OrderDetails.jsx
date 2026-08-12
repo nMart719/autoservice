@@ -1,6 +1,8 @@
 import { orders } from "../../data/orders.js";
 import { getCarById } from "../../utils/cars.js";
-import { getClientById, getFullName } from "../../utils/clients.js";
+import { getClientById } from "../../utils/clients.js";
+import { CarSummary } from "../cars/CarSummary.jsx";
+import { ClientSummary } from "../clients/ClientSummary.jsx";
 export function OrderDetails({ orderId }) {
   if (orderId == null) return <></>;
   const order = orders.find((o) => o.id === Number(orderId));
@@ -11,43 +13,16 @@ export function OrderDetails({ orderId }) {
   return (
     <div className="mt-4!">
       <h2>
-        {order.id} status:{order.status}
+        Order #{order.id}
       </h2>
-        
-          <div key={order.id}>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Client name</td>
-                  <td>{getFullName(client)}</td>
-                </tr>
-                <tr>
-                  <td>Model</td>
-                  <td>{car.model}</td>
-                </tr>
-                <tr>
-                  <td>VIN</td>
-                  <td>{car.vin}</td>
-                </tr>
-                <tr>
-                  <td>Plate number</td>
-                  <td>{car.plateNumber}</td>
-                </tr>
-                <tr>
-                  <td>Description</td>
-                  <td>{order.description}</td>
-                </tr>
-                <tr>
-                  <td>Date</td>
-                  <td>{order.date}</td>
-                </tr>
-                <tr>
-                  <td>Status</td>
-                  <td>{order.status}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div>----------------------</div>
+            <div>Status: {order.status}</div>
+            <div>Date: {order.date}</div>
+            <div>Description: {order.description}</div>
+            <div>Vehicle:</div>
+            <CarSummary car={car}></CarSummary>
+            <div>Client:</div>
+            <ClientSummary client={client}></ClientSummary>
     </div>
   );
 }
