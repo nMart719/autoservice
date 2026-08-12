@@ -5,7 +5,6 @@ import { OrderDetails } from "../components/orders/OrderDetails.jsx";
 import { orders } from "../data/orders.js";
 import { cars } from "../data/cars.js";
 import { clients } from "../data/clients.js";
-import { useState } from "react";
 export function Orders() {
   const ordersWithDetails = orders.map(order => {
     const car = cars.find(car => car.id === order.carId);
@@ -16,10 +15,8 @@ export function Orders() {
         client
     };
 });
-const [selectedOrderId, setSelectedOrderId] = useState(null);
   return <>
   <h2>Orders</h2>
-    <OrderList orders={ordersWithDetails} onSelect={setSelectedOrderId}></OrderList>
-    <OrderDetails orderId = {selectedOrderId}></OrderDetails>
+    <OrderList orders={ordersWithDetails}></OrderList>
   </>;
 }

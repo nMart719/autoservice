@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 export function CarList({ cars }) {
+  const navigate = useNavigate();
   return (
     <div>
       <div>
@@ -17,7 +19,12 @@ export function CarList({ cars }) {
         <tbody>
           {cars.map((car) => {
             return (
-              <tr key={car.id}>
+              <tr
+                key={car.id}
+                onClick={() => {
+                  navigate(`/cars/${car.id}`);
+                }}
+              >
                 <td className="text-left">{car.make}</td>
                 <td className="text-left">{car.model}</td>
                 <td className="text-left">{car.vin}</td>

@@ -13,6 +13,7 @@ import { Orders } from "./pages/Orders";
 import { Routes, Route } from "react-router-dom";
 import { ClientDetails } from "./components/clients/ClientDetails";
 import { CarDetails } from "./components/cars/CarDetails";
+import { OrderDetails } from "./components/orders/OrderDetails";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="clients/:id" element={<ClientDetails/>} />
           <Route path="cars/:id" element={<CarDetails />} />
+          <Route path="orders/:id" element={<OrderDetails />} />
         </Route>
          <Route path="*" element={<NotFound />} />
       </Routes>

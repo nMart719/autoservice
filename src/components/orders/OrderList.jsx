@@ -1,7 +1,8 @@
 import { getFullName } from "../../utils/clients";
 import { getCarMakeModel } from "../../utils/cars";
-export function OrderList({ orders, onSelect }) {
-    
+import { useNavigate } from "react-router-dom";
+export function OrderList({ orders}) {
+    const navigate = useNavigate();
   return (
     <div>
       <div>
@@ -22,7 +23,7 @@ export function OrderList({ orders, onSelect }) {
           {orders.map((order) => {
             return (
               <tr key={order.id} onClick={() => {
-              onSelect(order.id);
+              navigate(`/orders/${order.id}`);
             }}>
                 <td className="text-left">{getCarMakeModel(order.car)}</td>
                 <td className="text-left">{getFullName(order.client)}</td>
