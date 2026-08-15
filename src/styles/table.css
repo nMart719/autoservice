@@ -20,3 +20,6 @@ table td, th{
 table, th, td {
     border: 1px solid var(--secondary);
 }
+tbody tr {
+    cursor: pointer;
+}

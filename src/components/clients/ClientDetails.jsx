@@ -1,18 +1,23 @@
 import { getCarsByClient } from "../../utils/cars.js";
-import { clients } from "../../data/clients.js";
 import {CarList} from "../../components/cars/CarList";
 import { useParams } from "react-router-dom";
+import { OrderSummaryList } from "../orders/OrderSummaryList.jsx";
+import { getOrdersByClient } from "../../utils/orders.js";
+import { getClientById } from "../../utils/clients.js";
 export function ClientDetails() {
   const { id } = useParams()
   if (id == null) return <></>;
-  const client = clients.find((c) => c.id === Number(id));
+  const client = getClientById(Number(id));
   const cars = getCarsByClient(client.id);
+  const orders = getOrdersByClient(client.id);
   return (
     <div className="mt-4!">
       <h2>
         {client.name} {client.surname} {client.phone} {client.email} Cars:{cars.length}
       </h2>
         <CarList cars={cars}></CarList>
+        <div>--------Orders-----------</div>
+        <OrderSummaryList orders={orders} showCar={true}></OrderSummaryList>
       {/* {cars.map((car) => {
         return (
           <div key={car.id}>

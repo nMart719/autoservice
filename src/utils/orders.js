@@ -10,3 +10,6 @@ export function getOrdersByClient(clientId) {
         getOrdersByCar(car.id)
     );
 }
+export function getOrderById(orderId){
+    return orders.find((o) => o.id === orderId)
+}
