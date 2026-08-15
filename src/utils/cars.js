@@ -5,6 +5,7 @@ export function getCarsByClient(clientId) {
 }
 
 export function getCarMakeModel(car) {
+    if (!car) return "Unknown car";
   return `${car.make} ${car.model} `
 }
 

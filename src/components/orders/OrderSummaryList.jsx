@@ -2,6 +2,10 @@ import { getCarById, getCarMakeModel } from "../../utils/cars";
 import { useNavigate } from "react-router-dom";
 export function OrderSummaryList({ orders, showCar }) {
   const navigate = useNavigate();
+  const ordersWithCars = orders.map(order => ({
+    ...order,
+    car: getCarById(order.carId)
+}));
   return (
     <div>
       <div>
@@ -18,7 +22,7 @@ export function OrderSummaryList({ orders, showCar }) {
           </tr>
         </thead>
         <tbody>
-          {orders.map((order) => {
+          {ordersWithCars.map((order) => {
             return (
               <tr
                 key={order.id}
@@ -27,7 +31,7 @@ export function OrderSummaryList({ orders, showCar }) {
                 }}
               >
                 {showCar && (
-                  <td className="text-left">{getCarMakeModel(getCarById(order.carId))}</td>
+                  <td className="text-left">{getCarMakeModel(order.car)}</td>
                 )}
                 <td className="text-left">{order.description}</td>
                 <td className="text-left">{order.date}</td>
