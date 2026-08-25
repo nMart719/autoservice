@@ -12,3 +12,7 @@ h2{
   display: inline-block;
   margin-bottom: 20px;
 }
+
+input{
+  border: 1px solid var(--primary);
+}
