@@ -1,26 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 export function CarList({ cars }) {
-  const [search, setSearch] = useState("");
   const navigate = useNavigate();
-
-  const filteredCars = cars.filter((car) => {
-    Object.values(car).some((value) =>
-      String(value).toLowerCase().includes(search.toLowerCase()),
-    );
-  });
-
+  if (cars.length === 0) return <div style={{ width: "100%" }}>No cars found</div>;
   return (
     <div>
-      <div>
-        <input
-          name="search"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-          type="search"
-        ></input>
-        {/* <input type="button">Filter</input> */}
-      </div>
       <table id="table_car_list">
         <thead>
           <tr>
@@ -31,8 +14,7 @@ export function CarList({ cars }) {
           </tr>
         </thead>
         <tbody>
-          {filteredCars.length > 0
-            ? filteredCars.map((car) => {
+          {cars.map((car) => {
                 return (
                   <tr
                     key={car.id}
@@ -46,8 +28,7 @@ export function CarList({ cars }) {
                     <td className="text-left">{car.plateNumber}</td>
                   </tr>
                 );
-              })
-            : null}
+              })}
         </tbody>
       </table>
     </div>

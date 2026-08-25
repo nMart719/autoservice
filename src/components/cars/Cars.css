@@ -1,5 +1,7 @@
 @import "tailwindcss";
-
+div#cars_page{
+    width: 100%;
+}
 /* 
 main{
     @apply flex h-full w-full;

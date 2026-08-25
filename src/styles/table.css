@@ -23,3 +23,38 @@ table, th, td {
 tbody tr {
     cursor: pointer;
 }
+
+
+.table_header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+input{
+    background-color: var(--surface);
+    border: 1px solid var(--secondary);
+    border-radius: var(--radius-sm);
+}
+input.search_input{
+    text-align: right;
+  padding: 4px 12px;
+  background-image: url("/src/assets/search_icon.svg");
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+    width: 32px;
+transition: width 0.5s ease-in-out;
+}
+
+input.search_input:not(.expanded){
+    width: 32px;
+}
+input.search_input.expanded{
+    width: 100%;
+
+}
+input.search_input.expanded::placeholder{
+    color: var(--text);
+
+}
