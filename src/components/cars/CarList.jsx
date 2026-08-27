@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 export function CarList({ cars }) {
   const navigate = useNavigate();
+  console.log(cars)
   if (cars.length === 0) return <div style={{ width: "100%" }}>No cars found</div>;
   return (
     <div>

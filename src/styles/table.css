@@ -1,60 +1,77 @@
-
-div:has(table){
+div:has(table) {
     width: 100%;
 }
-table{
+
+table {
     width: 100%;
     /* display: block; */
 }
-table thead, tbody{
+
+table thead,
+tbody {
     background-color: var(--surface);
     width: 100%;
     /* display: block; */
 }
-table thead{
+
+table thead {
     margin-bottom: 10px;
 }
-table td, th{
+
+table td,
+th {
     padding: 5px;
 }
-table, th, td {
+
+table,
+th,
+td {
     border: 1px solid var(--secondary);
 }
+
 tbody tr {
     cursor: pointer;
 }
 
 
-.table_header{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-input{
+.table_actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+input {
     background-color: var(--surface);
     border: 1px solid var(--secondary);
     border-radius: var(--radius-sm);
 }
-input.search_input{
+
+input.search_input {
     text-align: right;
-  padding: 4px 12px;
-  background-image: url("/src/assets/search_icon.svg");
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position: right 8px center;
+    padding: 4px 12px;
+    background-image: url("/src/assets/search_icon.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
     width: 32px;
-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
-input.search_input:not(.expanded){
-    width: 32px;
-}
-input.search_input.expanded{
+input.search_input.expanded {
     width: 100%;
 
 }
-input.search_input.expanded::placeholder{
-    color: var(--text);
 
+input.search_input.expanded::placeholder {
+    color: var(--text);
+}
+
+input.search_input:not([value=""]) {
+     background-image: none;
 }
