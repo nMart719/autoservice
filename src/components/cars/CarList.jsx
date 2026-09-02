@@ -31,13 +31,13 @@ export function CarList({ cars }) {
         <thead>
           <tr>
             <th
-              className="text-left sort"
+              className={`text-left sort ${sortField === "make" ? (order === "asc" ? "sort_asc" : "sort_desc") : ""}`}
               onClick={() => handleSortingChange("make")}
             >
               Make<span className="sort-icon"></span>
             </th>
             <th
-              className="text-left"
+              className={`text-left sort ${sortField === "model" ? (order === "asc" ? "sort_asc" : "sort_desc") : ""}`}
               onClick={() => handleSortingChange("model")}
             >
               Model<span className="sort-icon"></span>

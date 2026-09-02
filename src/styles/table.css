@@ -98,3 +98,15 @@ input.search_input:not([value=""]) {
 .filter_dropdown.filter_opened{
     display: block;
 }
+th.sort {
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    background-image: url("/src/assets/sort_icon.svg");
+}
+th.sort.sort_asc{
+    background-image: url("/src/assets/sort_asc_icon.svg");
+}
+th.sort.sort_desc{
+    background-image: url("/src/assets/sort_desc_icon.svg");
+}
