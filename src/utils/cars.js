@@ -1,18 +1,18 @@
-import { cars } from "../data/cars"
+import { cars } from "../data/cars";
 
 export function getCarsByClient(clientId) {
-  return cars.filter(car => car.clientId === clientId)
+  return cars.filter((car) => car.clientId === clientId);
 }
 
 export function getCarMakeModel(car) {
-    if (!car) return "Unknown car";
-  return `${car.make} ${car.model} `
+  if (!car) return "Unknown car";
+  return `${car.make} ${car.model} `;
 }
 
 export function getCarById(carId) {
-  return cars.find(car => car.id === carId)
+  return cars.find((car) => car.id === carId);
 }
-
+//TODO: Search with more than 1 word like "bmw x5" etc.
 export function searchCars(search) {
   return cars.filter((car) => {
     return Object.values(car).some((value) =>
@@ -22,17 +22,14 @@ export function searchCars(search) {
 }
 
 export function filterCars(cars, filters) {
-  console.log(cars, filters)
+  console.log(cars, filters);
   return cars.filter((car) => {
-    const matchesMake =
-      filters.make === "All" || car.make === filters.make;
+    const matchesMake = filters.make === "All" || car.make === filters.make;
 
-    const matchesModel =
-      filters.model === "All" || car.model === filters.model;
+    const matchesModel = filters.model === "All" || car.model === filters.model;
 
     const matchesClient =
-      filters.clientId === "All" ||
-      car.clientId === Number(filters.clientId);
+      filters.clientId === "All" || car.clientId === Number(filters.clientId);
 
     return matchesMake && matchesModel && matchesClient;
   });

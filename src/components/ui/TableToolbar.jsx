@@ -1,6 +1,7 @@
 import { useState } from "react";
 export function TableToolBar({ table, search, onSearchChange, onFilterClick }) {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
   table = String(table).charAt(0).toUpperCase() + String(table).slice(1);
   return (
     <div className="table_header">
@@ -17,10 +18,10 @@ export function TableToolBar({ table, search, onSearchChange, onFilterClick }) {
           placeholder={isSearchExpanded ? "Search" : ""}
         />
 
-        <button className="filter_button" >
+        <button className={`filter_button${isFilterOpen ? " filter_opened" : ""}`} onClick={() => setIsFilterOpen(!isFilterOpen)}>
           Filter
         </button>
-        <div className="filter_dropdown">
+        <div className={`filter_dropdown${isFilterOpen ? " filter_open" : ""}`}>
           <label>Filter</label>
           <select name="filter" id="filter" onChange={onFilterClick}>
             <option value="All">All</option>
