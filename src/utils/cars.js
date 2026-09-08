@@ -22,7 +22,7 @@ export function searchCars(search) {
 }
 
 export function filterCars(cars, filters) {
-  console.log(cars, filters);
+  //console.log(cars, filters);
   return cars.filter((car) => {
     const matchesMake = filters.make === "All" || car.make === filters.make;
 
