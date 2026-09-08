@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
-export function TableBody({ columns, tableData }) {
+export function TableBody({ columns, tableData, path }) {
+  console.log(columns);
+  console.log(tableData);
   const navigate = useNavigate();
   return (
     <tbody>
@@ -8,7 +10,7 @@ export function TableBody({ columns, tableData }) {
         <tr
           key={data.id}
           onClick={() => {
-            navigate(`/cars/${tableData.id}`);
+            navigate(`/${path}/${tableData.id}`);
           }}
         >
           {columns.map(({ accessor }) => {

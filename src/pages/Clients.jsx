@@ -1,20 +1,40 @@
 
 import { ClientDetails } from "../components/clients/ClientDetails";
 import { ClientList } from "../components/clients/ClientList";
-import { clients } from "../data/clients";
-import {  useMemo } from "react";
-import { cars } from "../data/cars"
+import {  useState } from "react";
+import { searchClients, filterClients } from "../utils/clients";
+import { TableToolBar } from "../components/ui/TableToolBar";
 export function Clients() {
-const clientsWithCounts = useMemo(() => {
-    return clients.map(client => ({
-      ...client,
-      carsCount: cars.filter(c => c.clientId === client.id).length
-    }))
-  }, [clients, cars]);
+  const [search, setSearch] = useState("");
+    const [filters, setFilters] = useState({
+      name: "All",
+      carsCount: "All",
+    });
+  function handleFilterClick(e) {
+    const selectedFilter = e.target.value;
+    setFilters((filters) => ({ ...filters, make: selectedFilter }));
+    //setIsFilterOpen((isFilterOpen) => !isFilterOpen);
+    console.log(e.target.value);
+  }
+
+  function handleSearchClick(e) {
+    const value = e.target.value;
+    setSearch(value);
+  }
+
+
+  
+    const filteredBySearch = searchClients(search);
+    const filteredClients = filterClients(filteredBySearch, filters);
   return (
-    <>
-    <h2>Clients</h2>
-      <ClientList clients={clientsWithCounts}></ClientList>
-    </>
+    <div id="clients_page">
+          <TableToolBar
+            table="Clients"
+            search={search}
+            onSearchChange={handleSearchClick}
+            onFilterClick={handleFilterClick}
+          ></TableToolBar>
+          <ClientList clients={filteredClients}></ClientList>
+        </div>
   );
 }

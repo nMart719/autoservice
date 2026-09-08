@@ -33,9 +33,9 @@ export function CarList({ cars }) {
   });
   return (
     <div>
-      <table id="table_car_list">
+      <table id="table_cars_list">
         <TableHead columns={columns} handleSorting={handleSorting} />
-        <TableBody columns={columns} tableData={sortedData} />
+        <TableBody columns={columns} tableData={sortedData} path={"cars"}/>
       </table>
     </div>
   );
