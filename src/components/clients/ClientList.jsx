@@ -19,7 +19,7 @@ export function ClientList({ clients }) {
         sortOrder: sortOrder,
       });
     };
-    const sortedData = [...clients].sort((a, b) => {
+    const sortedData = clients.sort((a, b) => {
       const { sortField, sortOrder } = sortConfig;
   
       if (!sortField) return 0;

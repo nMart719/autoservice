@@ -1,11 +1,11 @@
 import { clients } from "../data/clients"
 import { cars } from "../data/cars"
-const clientsWithCounts = (() => {
-    return clients.map(client => ({
-      ...client,
-      carsCount: cars.filter(c => c.clientId === client.id).length
-    }))
-  }, [clients, cars]);
+const clientsWithCounts = clients.map((client) => ({
+  ...client,
+  carsCount: cars.filter(
+    (car) => car.clientId === client.id
+  ).length,
+}));
 export function getClientById(clientId) {
   return clients.find(client => client.id === clientId)
 }
@@ -15,6 +15,7 @@ export function getFullName(client){
 }
 
 export function searchClients(search) {
+  console.log(clientsWithCounts);
   return clientsWithCounts.filter((client) => {
     return Object.values(client).some((value) =>
       String(value).toLowerCase().includes(search.toLowerCase()),
