@@ -1,5 +1,16 @@
 import { getCarsByClient } from "../utils/cars"
 import { orders } from "../data/orders"
+import { cars } from "../data/cars"
+import { clients } from "../data/clients"
+const ordersWithDetails = orders.map(order => {
+    const car = cars.find(car => car.id === order.carId);
+    const client = clients.find(client => client.id === car?.clientId)
+    return {
+        ...order,
+        car,
+        client
+    };
+});
 
 export function getOrdersByCar(carId) {
   return orders.filter(order => order.carId === carId)
@@ -12,4 +23,25 @@ export function getOrdersByClient(clientId) {
 }
 export function getOrderById(orderId){
     return orders.find((o) => o.id === orderId)
+}
+
+
+export function searchOrders(search) {
+  return ordersWithDetails.filter((order) => {
+    return Object.values(order).some((value) =>
+      String(value).toLowerCase().includes(search.toLowerCase()),
+    );
+  });
+}
+
+export function filterOrders(orders, filters) {
+  //console.log(cars, filters);
+  return ordersWithDetails.filter((order) => {
+    const matchesStatus = filters.status === "All" || order.status === filters.status;
+
+    const matchesDate = filters.date === "All" || order.date === filters.date;
+
+
+    return matchesStatus && matchesDate;
+  });
 }
