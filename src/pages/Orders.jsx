@@ -1,8 +1,9 @@
 import { OrderList } from "../components/orders/OrderList.jsx";
 import { OrderDetails } from "../components/orders/OrderDetails.jsx";
 // import { getOrdersByCar, getOrdersByClient } from "../utils/orders.js";
-import { filterOrders, searchOrders,  } from "../data/orders.js";
+import { filterOrders, searchOrders,  } from "../utils/orders.js";
 import {useState} from 'react';
+import { TableToolBar } from "../components/ui/TableToolbar";
 export function Orders() {
   const [search, setSearch] = useState("");
     const [filters, setFilters] = useState({
@@ -23,17 +24,16 @@ export function Orders() {
   
 const filteredBySearch = searchOrders(search);
   const filteredOrders = filterOrders(filteredBySearch, filters);
+  console.log(filteredOrders)
   return <>
   <div id="orders_page">
         <TableToolBar
-          table="Clients"
+          table="Orders"
           search={search}
           onSearchChange={handleSearchClick}
           onFilterClick={handleFilterClick}
         ></TableToolBar>
         <OrderList orders={filteredOrders}></OrderList>
       </div>
-  <h2>Orders</h2>
-    
   </>;
 }

@@ -1,14 +1,19 @@
-import { getCarsByClient } from "../utils/cars"
+import { getCarMakeModel, getCarsByClient } from "../utils/cars"
 import { orders } from "../data/orders"
 import { cars } from "../data/cars"
 import { clients } from "../data/clients"
+import { getFullName } from "./clients";
 const ordersWithDetails = orders.map(order => {
     const car = cars.find(car => car.id === order.carId);
     const client = clients.find(client => client.id === car?.clientId)
+    const carMakeModel = getCarMakeModel(car);
+    const clientName = getFullName(client);
     return {
         ...order,
         car,
-        client
+        client,
+        carMakeModel,
+        clientName
     };
 });
 
@@ -36,7 +41,7 @@ export function searchOrders(search) {
 
 export function filterOrders(orders, filters) {
   //console.log(cars, filters);
-  return ordersWithDetails.filter((order) => {
+  return orders.filter((order) => {
     const matchesStatus = filters.status === "All" || order.status === filters.status;
 
     const matchesDate = filters.date === "All" || order.date === filters.date;

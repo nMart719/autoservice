@@ -9,8 +9,8 @@ export function OrderList({ orders}) {
       sortOrder: "asc",
     });
     const columns = [
-      { label: "Car", accessor: "Car", sortable: false },
-      { label: "Client", accessor: "Client", sortable: false },
+      { label: "Car", accessor: "carMakeModel", sortable: false },
+      { label: "Client", accessor: "clientName", sortable: false },
       { label: "Description", accessor: "description", sortable: false },
       { label: "Date", accessor: "date", sortable: true },
       { label: "Status", accessor: "status", sortable: true },
